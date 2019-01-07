@@ -71,7 +71,7 @@ const logger = winston.createLogger({
 const main = async () => {
     const username = 'sergnio';
     const password = 'pizza';
-    const gameId = 6395812891328512;
+    const gameId = 5467759780560896;
 
     try {
         const cookie = await login(username, password);
