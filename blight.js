@@ -82,9 +82,9 @@ const main = async () => {
 
         if (data.report !== 'abort') {
             const gameState = data.report.paused ? 'paused' : 'unpaused';
-            logger.log(`Success! Game ${gameId} is now`, gameState)
+            logger.info(`Success! Game ${gameId} is now ${gameState}`)
         } else {
-            logger.error('Error, something wrong happened. Report: ', data.report);
+            logger.error(`Error, something wrong happened. Report: ${data.report}`);
         }
     } catch (e) {
         logger.error(e);
@@ -106,7 +106,7 @@ const skip = async (gameId, cookie) => {
         );
 
     } catch (e) {
-        logger.error('Oops! Something went really wrong. Error :', e)
+        logger.error(`Oops! Something went really wrong. Error : ${e}`)
     }
 };
 
@@ -126,7 +126,7 @@ const login = async (username, password) => {
             // i.e. ['auth=xxx']
         return authInfo.split(';')[0];
     } catch (err) {
-        logger.error("Oops! Something happened while logging in",err);
+        logger.error(`Oops! Something happened while logging in ${err}`);
     }
 };
 
