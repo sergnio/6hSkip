@@ -1,12 +1,16 @@
 const axios = require('axios');
 const winston = require('winston');
 
+/**
+ * Set up logger
+ * @type {winston.Logger}
+ */
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.simple(),
     transports: [
         new winston.transports.Console(),
-        new winston.transports.File({ filename: 'logfile.log' })
+        new winston.transports.File({ filename: 'blight.log' })
     ]
 });
 
