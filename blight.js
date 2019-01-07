@@ -1,5 +1,14 @@
 const axios = require('axios');
+const winston = require('winston');
 
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.simple(),
+    transports: [
+        new winston.transports.Console(),
+        new winston.transports.File({ filename: 'logfile.log' })
+    ]
+});
 
 /**
  * NOTES
@@ -69,12 +78,12 @@ const main = async () => {
 
         if (data.report !== 'abort') {
             const gameState = data.report.paused ? 'paused' : 'unpaused';
-            console.log(`Success! Game ${gameId} is now`, gameState)
+            logger.log(`Success! Game ${gameId} is now`, gameState)
         } else {
-            console.log('Error, something wrong happened. Report: ', data.report);
+            logger.error('Error, something wrong happened. Report: ', data.report);
         }
     } catch (e) {
-        log(e);
+        logger.error(e);
     }
 
 
@@ -93,7 +102,7 @@ const skip = async (gameId, cookie) => {
         );
 
     } catch (e) {
-        console.log('Oops! Something went really wrong. Error :', e)
+        logger.error('Oops! Something went really wrong. Error :', e)
     }
 };
 
@@ -113,13 +122,8 @@ const login = async (username, password) => {
             // i.e. ['auth=xxx']
         return authInfo.split(';')[0];
     } catch (err) {
-        console.log(err);
+        logger.error("Oops! Something happened while logging in",err);
     }
 };
-
-const log = (error) => {
-    // todo - pass in method name using this.methodName or something similar
-    console.log('Oops! Something went really wrong in ${method} . Error :', e)
-}
 
 main();
