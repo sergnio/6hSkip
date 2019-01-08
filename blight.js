@@ -81,8 +81,9 @@ const main = async () => {
         const data = skipResponse.data;
 
         if (data.report !== 'abort') {
+            let currentTime = new Date();
             const gameState = data.report.paused ? 'paused' : 'unpaused';
-            logger.info(`Success! Game ${gameId} is now ${gameState}`)
+            logger.info(`Success! Game ${gameId} is now ${gameState} at ${currentTime}`)
         } else {
             logger.error(`Error, something wrong happened. Report: ${data.report}`);
         }
