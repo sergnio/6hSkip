@@ -1,6 +1,6 @@
 # 6hSkip
 
-# How to use script
+# How to use script (ubuntu 18.04 instructions, 1/9/19)
 1) Modify the name, password, and gameId variables to match your username, password, and gameId.
 2) Download this script (or clone the project) on a server of your choice, in a folder of your choice.
 i.e.: <code>mkdir blight && cd blight && git clone URL</code>
