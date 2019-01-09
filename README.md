@@ -1,4 +1,4 @@
-# 6hSkip
+# Pause / unpause
 
 # How to use script (ubuntu 18.04 instructions, 1/9/19)
 1) Modify the name, password, and gameId variables to match your username, password, and gameId.
