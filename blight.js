@@ -15,53 +15,7 @@ const logger = winston.createLogger({
 });
 
 /**
- * NOTES
- *
- * STEP 1 X
- *
- * I want to log in (login which takes username, password)
- * grab the auth cookie
- * set the auth cookie in the headers
- * then I want to call the skip ahead api
- * using the game id and my auth cookie
- *
- * IF FAIL:
- * Simply log the error
- * (Email there was an error to sergnioa@gmail.com [CONST]
- *
- * STEP 2
- *
- * After I'm able to successfully call this with a node command
- * I want to run this on a cron schedule.
- *
- * to test this, I can simply set the cron schedule to 1 minute from now
- * Then wait to see if the script runs
- *
- * STEP 3 X
- *
- * Create a function, skip (takes a game id), which first calls login.
- * login will return a cookie
- * skip will take the cookie, set it in the header
- * skip will then call the skip 6 hours endpoint in our game
- *
- * IF FAIL:
- * * Log error [LOG ERROR FUNCTION]
- * (email error to serginoa@gmail.com)
- *
- * STEP 4 X
- *
- * Main will call skip
- *
- * STEP 5
- *
- * Extract log error function
- *
- * STEP 6
- *
- * Send email if there are errors
- *
- * Success!
- *
+ * TODO - (Email there was an error to sergnioa@gmail.com [CONST]
  */
 
 /**
